@@ -1,11 +1,12 @@
 import {CameraControls, Environment, MeshReflectorMaterial, Text} from "@react-three/drei";
 import {Horse} from "./Model.jsx";
-import {degToRad} from "three/src/math/MathUtils.js";
 import {useRef} from "react";
 import {Color} from "three";
 
 const bloomColor = new Color("#bb92cc");
 bloomColor.multiplyScalar(2.9);
+
+const FONT = 'fonts/KodeMono.ttf';
 
 export const Experience = () => {
 	const controls = useRef();
@@ -13,7 +14,7 @@ export const Experience = () => {
 		<>
 			<CameraControls ref={controls}/>
 			<Text
-				font="fonts/KodeMono.ttf"
+				font={FONT}
 				position={[-1.5, -0.1, 3]}
 				rotation-y={1}
 				lineHeight={0.8}
@@ -26,7 +27,7 @@ export const Experience = () => {
 				<Horse scale={0.015}/>
 			</group>
 			<Text
-				font="fonts/KodeMono.ttf"
+				font={FONT}
 				position={[1.5, -0.1, 3]}
 				rotation-y={-1}
 				lineHeight={0.8}
@@ -35,7 +36,7 @@ export const Experience = () => {
 				2024
 				<meshBasicMaterial color={bloomColor} toneMapped={false}/>
 			</Text>
-			<mesh position-y={-0.88} rotation-x={-Math.PI / 2}>
+			<mesh position-y={-0.78} rotation-x={-Math.PI / 2}>
 				<planeGeometry args={[100, 100]}/>
 				<MeshReflectorMaterial
 					blur={[100, 100]}
