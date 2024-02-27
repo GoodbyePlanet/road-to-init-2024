@@ -4,8 +4,8 @@ import {degToRad} from "three/src/math/MathUtils.js";
 import {useRef} from "react";
 import {Color} from "three";
 
-const bloomColor = new Color("#fff");
-bloomColor.multiplyScalar(1.5);
+const bloomColor = new Color("#bb92cc");
+bloomColor.multiplyScalar(2.9);
 
 export const Experience = () => {
 	const controls = useRef();
@@ -13,7 +13,7 @@ export const Experience = () => {
 		<>
 			<CameraControls ref={controls}/>
 			<Text
-				font="fonts/robotoMono.ttf"
+				font="fonts/KodeMono.ttf"
 				position={[-1.5, -0.1, 3]}
 				rotation-y={1}
 				lineHeight={0.8}
@@ -26,7 +26,7 @@ export const Experience = () => {
 				<Horse scale={0.015}/>
 			</group>
 			<Text
-				font="fonts/robotoMono.ttf"
+				font="fonts/KodeMono.ttf"
 				position={[1.5, -0.1, 3]}
 				rotation-y={-1}
 				lineHeight={0.8}
