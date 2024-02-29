@@ -64,7 +64,7 @@ export const Experience = () => {
 			</mesh>
 			<Text
 				font={FONT}
-				position={[-1.5, -0.1, 3]}
+				position={[-1.5, -0.2, 3]}
 				rotation-y={1}
 				lineHeight={0.8}
 				fontSize={1.2}
@@ -77,7 +77,7 @@ export const Experience = () => {
 			</group>
 			<Text
 				font={FONT}
-				position={[1.5, -0.1, 3]}
+				position={[1.5, -0.2, 3]}
 				rotation-y={-1}
 				lineHeight={0.8}
 				fontSize={1.2}
