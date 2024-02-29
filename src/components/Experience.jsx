@@ -1,6 +1,6 @@
-import {CameraControls, Environment, MeshReflectorMaterial, Text} from "@react-three/drei";
+import {CameraControls, Environment, MeshReflectorMaterial, Text, useFont} from "@react-three/drei";
 import {Horse} from "./Model.jsx";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 import {Color} from "three";
 
 const bloomColor = new Color("#bb92cc");
@@ -10,9 +10,34 @@ const FONT = 'fonts/roboto.ttf';
 
 export const Experience = () => {
 	const controls = useRef();
+	const fitScreenCamera = useRef();
+
+	const loadingExperience = async () => {
+		controls.current.dolly(-11);
+		controls.current.smoothTime = 1.4;
+		fitCamera();
+	}
+
+	const fitCamera = async () => {
+		controls.current.fitToBox(fitScreenCamera.current, true);
+	}
+
+	useEffect(() => {
+		loadingExperience();
+	}, []);
+
+	useEffect(() => {
+		window.addEventListener("resize", fitCamera);
+		return () => window.removeEventListener("resize", fitCamera);
+	}, [])
+
 	return (
 		<>
 			<CameraControls ref={controls}/>
+			<mesh ref={fitScreenCamera} position-z={0.9} visible={false}>
+				<boxGeometry args={[8, 2, 2]}/>
+				<meshBasicMaterial color="yellow" transparent opacity={0.5}/>
+			</mesh>
 			<Text
 				font={FONT}
 				position={[-1.5, -0.1, 3]}
@@ -58,3 +83,5 @@ export const Experience = () => {
 		</>
 	);
 };
+
+useFont.preload(FONT);
