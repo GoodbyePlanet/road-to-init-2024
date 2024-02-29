@@ -6,7 +6,7 @@ import {Color} from "three";
 const bloomColor = new Color("#bb92cc");
 bloomColor.multiplyScalar(2.9);
 
-const FONT = 'fonts/KodeMono.ttf';
+const FONT = 'fonts/roboto.ttf';
 
 export const Experience = () => {
 	const controls = useRef();
