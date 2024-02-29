@@ -14,7 +14,7 @@ export const Experience = () => {
 	const fitScreenCamera = useRef();
 
 	const loadingExperience = async () => {
-		controls.current.dolly(-11);
+		controls.current.dolly(-12);
 		controls.current.smoothTime = 1.4;
 		fitCamera();
 	}
@@ -33,7 +33,7 @@ export const Experience = () => {
 	}, [])
 
 	const [roughness, normal] = useLoader(TextureLoader, [
-		"textures/moss_wood_diff_4k.jpg",
+		"textures/wood_planks_grey_diff_2k.jpg",
 		"textures/polystyrene_diff_4k.jpg",
 	]);
 
@@ -49,11 +49,11 @@ export const Experience = () => {
 		roughness.encoding = LinearEncoding;
 	}, [normal, roughness]);
 
-	// useFrame((state, delta) => {
-	// 	let t = -state.clock.getElapsedTime() * 0.128;
-	// 	roughness.offset.set(0, t % 1);
-	// 	normal.offset.set(0, t % 1);
-	// });
+	useFrame((state, delta) => {
+		let t = -state.clock.getElapsedTime() * 0.128;
+		roughness.offset.set(0, t % 1);
+		normal.offset.set(0, t % 1);
+	});
 
 	return (
 		<>
@@ -72,7 +72,7 @@ export const Experience = () => {
 				INIT
 				<meshBasicMaterial color={bloomColor} toneMapped={false}/>
 			</Text>
-			<group rotation-y={0} position={[0, -1, 0]}>
+			<group rotation-y={0} position={[0, -0.9, 0]}>
 				<Horse scale={0.015}/>
 			</group>
 			<Text

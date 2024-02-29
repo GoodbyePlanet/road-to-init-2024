@@ -8,7 +8,7 @@ function App() {
 		<Canvas shadows camera={{position: [0, 0, 8], fov: 42}}>
 			<color attach="background" args={["#361D4A"]}/>
 			<fog attach="fog" args={["#361D4A", 8, 20]}/>
-			<Suspense fallback={null}>
+			<Suspense>
 				<Experience/>
 			</Suspense>
 			<EffectComposer>
