@@ -1,8 +1,7 @@
-import {CameraControls, Environment, MeshReflectorMaterial, Text, useFont} from "@react-three/drei";
+import {CameraControls, Environment, Text, useFont} from "@react-three/drei";
 import {Horse} from "./Model.jsx";
 import {useEffect, useRef} from "react";
-import {Color, LinearEncoding, RepeatWrapping, TextureLoader} from "three";
-import {useFrame, useLoader} from "@react-three/fiber";
+import {Color} from "three";
 import Ground from "./Ground.jsx";
 
 const bloomColor = new Color("#bb92cc");
@@ -35,7 +34,7 @@ export const Experience = () => {
 
 	return (
 		<>
-			<CameraControls ref={controls}/>
+			<CameraControls ref={controls} maxPolarAngle={1.5}/>
 			<mesh ref={fitScreenCamera} position-z={0.9} visible={false}>
 				<boxGeometry args={[8, 2, 2]}/>
 				<meshBasicMaterial color="yellow" transparent opacity={0.5}/>
@@ -63,7 +62,7 @@ export const Experience = () => {
 				2024
 				<meshBasicMaterial color={bloomColor} toneMapped={false}/>
 			</Text>
-      <Ground />
+			<Ground/>
 			<Environment preset="sunset"/>
 		</>
 	);
