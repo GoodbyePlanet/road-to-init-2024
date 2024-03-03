@@ -1,6 +1,6 @@
+import {useEffect, useRef} from "react";
 import {CameraControls, Environment, Text, useFont} from "@react-three/drei";
 import {Horse} from "./Model.jsx";
-import {useEffect, useRef} from "react";
 import {Color} from "three";
 import Ground from "./Ground.jsx";
 import {useAtom} from "jotai";
