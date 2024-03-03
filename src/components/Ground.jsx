@@ -28,7 +28,7 @@ const Ground = () => {
 	});
 
 	return (
-		<mesh position-y={-0.78} rotation-x={-Math.PI / 2}>
+		<mesh position-y={-0.8} rotation-x={-Math.PI / 2}>
 			<planeGeometry args={[100, 100]}/>
 			<MeshReflectorMaterial
 				normalMap={normal}

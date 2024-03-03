@@ -41,6 +41,7 @@ export const Experience = () => {
 	return (
 		<>
 			<CameraControls makeDefault ref={controls} maxPolarAngle={1.5}/>
+			 {/*Mesh bellow is here to allow resize responsiveness*/}
 			<mesh ref={fitScreenCamera} position-z={0.9} visible={false}>
 				<boxGeometry args={[8, 2, 2]}/>
 				<meshBasicMaterial color="yellow" transparent opacity={0.5}/>
