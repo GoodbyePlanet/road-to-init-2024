@@ -3,21 +3,12 @@ import {Canvas} from "@react-three/fiber";
 import {Experience} from "./components/Experience";
 import {Bloom, EffectComposer} from "@react-three/postprocessing";
 import {UI} from "./components/UI.jsx";
-
-const Logo = () => {
-	return (
-		<div>
-			<a href="/">
-				<img src="/initlogo.png" alt="logo" className="w-32 left-10 top-10 fixed z-50"/>
-			</a>
-		</div>
-	)
-}
+import Logo from "./components/Logo.jsx";
 
 const App = () => {
 	return (
 		<>
-			<Logo />
+			<Logo/>
 			<Canvas shadows camera={{position: [0, 0, 8], fov: 42}}>
 				<color attach="background" args={["#361D4A"]}/>
 				<fog attach="fog" args={["#361D4A", 8, 20]}/>
