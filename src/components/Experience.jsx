@@ -1,7 +1,7 @@
 import {useEffect, useRef} from "react";
 import {CameraControls, Environment, Text, useFont} from "@react-three/drei";
 import {Horse} from "./Model.jsx";
-import {Color} from "three";
+import {Color, MathUtils} from "three";
 import Ground from "./Ground.jsx";
 import {useAtom} from "jotai";
 import {currentPageAtom} from "./UI.jsx";
@@ -12,6 +12,7 @@ const reddishBloomColor = new Color("#D3165A");
 reddishBloomColor.multiplyScalar(12);
 
 const FONT = 'fonts/roboto.ttf';
+const {DEG2RAD} = MathUtils;
 
 export const Experience = () => {
 	const controls = useRef();
@@ -39,6 +40,22 @@ export const Experience = () => {
 		window.addEventListener("resize", fitCamera);
 		return () => window.removeEventListener("resize", fitCamera);
 	}, []);
+
+	const a = async () => {
+		if (controls.current) {
+			// controls.current?.rotate(0, -40 * DEG2RAD, true);
+			controls.current.smoothTime = 0.1;
+			await controls.current?.dolly(-2, true);
+			// setTimeout(() => {
+			// 	controls.current?.rotate(3 * Math.PI / 4, 0, true);
+			// }, 1200)
+		}
+	}
+	useEffect(() => {
+		window.addEventListener("mousedown", a);
+
+		return () => window.removeEventListener("mousedown", a)
+	}, [])
 
 	return (
 		<>

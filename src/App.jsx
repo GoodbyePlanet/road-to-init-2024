@@ -14,7 +14,7 @@ const App = () => {
 			<Canvas shadows camera={{position: [0, 0, 8], fov: 45}}>
 				<color attach="background" args={[BACKGROUND_COLOR]}/>
 				<fog attach="fog" args={[BACKGROUND_COLOR, 8, 20]}/>
-				<Suspense>
+				<Suspense fallback={null}>
 					<Experience/>
 				</Suspense>
 				<EffectComposer>

@@ -62,4 +62,4 @@ export function Horse(props) {
 	);
 }
 
-useGLTF.preload("/Horse_done.glb");
+useGLTF.preload("/models/Horse_done.glb");
