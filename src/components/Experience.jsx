@@ -3,8 +3,8 @@ import {CameraControls, Environment, Text, useFont} from "@react-three/drei";
 import {Horse} from "./Model.jsx";
 import {Color, MathUtils} from "three";
 import Ground from "./Ground.jsx";
-import {useAtom} from "jotai";
-import {currentPageAtom} from "./UI.jsx";
+import {useStore} from "jotai";
+import {currentPageAtom, PAGES} from "../atoms.js";
 
 const whiteBloomColor = new Color("#bb92cc");
 whiteBloomColor.multiplyScalar(5);
@@ -17,13 +17,37 @@ const {DEG2RAD} = MathUtils;
 export const Experience = () => {
 	const controls = useRef();
 	const fitScreenCamera = useRef();
-	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+	const store = useStore();
+
+	store.sub(currentPageAtom, async () => {
+		const page = store.get(currentPageAtom);
+
+		console.log(controls.current)
+		if (page === PAGES.CONFERENCE) {
+			controls.current.smoothTime = 0.095;
+			await controls.current?.dolly(-1, true);
+			controls.current.smoothTime = 0.5;
+			await controls.current?.rotate(135 * DEG2RAD, 0, true);
+		} else if (page === PAGES.HOME) {
+			await controls.current?.reset(true);
+		} else if (page === PAGES.TEAM) {
+			controls.current.smoothTime = 0.095;
+			await controls.current?.dolly(-1, true);
+			controls.current.smoothTime = 0.5;
+			await controls.current?.rotate(-135 * DEG2RAD, 0, true);
+		} else if (page === PAGES.SPEAKERS) {
+			controls.current.smoothTime = 0.095;
+			await controls.current?.dolly(-8, true);
+			controls.current.smoothTime = 0.5;
+			await controls.current?.truck(0, -2, true)
+		}
+	});
 
 	const loadingExperience = async () => {
-		controls.current.dolly(-12);
+		await controls.current.dolly(-12);
 		controls.current.smoothTime = 1.4;
 		setTimeout(() => {
-			setCurrentPage("home");
+			store.set(currentPageAtom, PAGES.HOME);
 		}, 1200);
 		fitCamera();
 	}
@@ -40,22 +64,6 @@ export const Experience = () => {
 		window.addEventListener("resize", fitCamera);
 		return () => window.removeEventListener("resize", fitCamera);
 	}, []);
-
-	const a = async () => {
-		if (controls.current) {
-			// controls.current?.rotate(0, -40 * DEG2RAD, true);
-			controls.current.smoothTime = 0.1;
-			await controls.current?.dolly(-2, true);
-			// setTimeout(() => {
-			// 	controls.current?.rotate(3 * Math.PI / 4, 0, true);
-			// }, 1200)
-		}
-	}
-	useEffect(() => {
-		window.addEventListener("mousedown", a);
-
-		return () => window.removeEventListener("mousedown", a)
-	}, [])
 
 	return (
 		<>

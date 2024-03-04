@@ -1,15 +1,17 @@
 import {Suspense} from "react";
+import {Provider} from "jotai";
 import {Canvas} from "@react-three/fiber";
 import {Experience} from "./components/Experience";
 import {Bloom, EffectComposer} from "@react-three/postprocessing";
 import {UI} from "./components/UI.jsx";
 import Logo from "./components/Logo.jsx";
+import {globalStoreAtom} from "./atoms.js";
 
 const BACKGROUND_COLOR = "#361D4A";
 
 const App = () => {
 	return (
-		<>
+		<Provider store={globalStoreAtom}>
 			<Logo/>
 			<Canvas shadows camera={{position: [0, 0, 8], fov: 45}}>
 				<color attach="background" args={[BACKGROUND_COLOR]}/>
@@ -22,7 +24,7 @@ const App = () => {
 				</EffectComposer>
 			</Canvas>
 			<UI/>
-		</>
+		</Provider>
 	);
 }
 
