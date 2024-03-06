@@ -7,8 +7,8 @@ export const UI = () => {
 
 	const shouldShowButtons = currentPage === PAGES.HOME || currentPage === PAGES.CONFERENCE ||
 		currentPage === PAGES.TEAM || currentPage === PAGES.SPEAKERS;
-
 	const isOnPage = (page) => currentPage === page;
+	const shouldShowHomeButton = isOnPage(PAGES.CONFERENCE) || isOnPage(PAGES.TEAM) || isOnPage(PAGES.SPEAKERS);
 
 	return (
 		<div className="fixed inset-0 pointer-events-none">
@@ -32,15 +32,7 @@ export const UI = () => {
 						</div>
 					</>
 				)}
-				{isOnPage(PAGES.CONFERENCE) && (
-					<Button page={PAGES.HOME}/>
-				)}
-				{isOnPage(PAGES.TEAM) && (
-					<Button page={PAGES.HOME}/>
-				)}
-				{isOnPage(PAGES.SPEAKERS) && (
-					<Button page={PAGES.HOME}/>
-				)}
+				{shouldShowHomeButton && <Button page={PAGES.HOME}/>}
 			</section>
 		</div>
 	);
