@@ -22,7 +22,6 @@ export const Experience = () => {
 	store.sub(currentPageAtom, async () => {
 		const page = store.get(currentPageAtom);
 
-		console.log(controls.current)
 		if (page === PAGES.CONFERENCE) {
 			controls.current.smoothTime = 0.095;
 			await controls.current?.dolly(-1, true);
