@@ -33,6 +33,15 @@ export const UI = () => {
 					</>
 				)}
 				{shouldShowHomeButton && <Button page={PAGES.HOME}/>}
+				{isOnPage(PAGES.CONFERENCE) && (<div className="absolute left-7 top-56">
+					<p>Here goes the section about conference!</p>
+				</div>)}
+				{isOnPage(PAGES.TEAM) && (<div className="absolute right-7 top-56">
+					<p>Here goes the section about team!</p>
+				</div>)}
+				{isOnPage(PAGES.SPEAKERS) && (<div className="">
+					<p>Here goes the section about speakers!</p>
+				</div>)}
 			</section>
 		</div>
 	);
