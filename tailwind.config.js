@@ -3,9 +3,15 @@ export default {
 	content: [
 		"./index.html",
 		"./src/**/*.{js,ts,jsx,tsx}",
-	],  theme: {
-    extend: {},
-  },
-  plugins: [],
+	],
+	theme: {
+		extend: {
+			colors: {
+				'primary-from': '#361D4A',  // Replace with your custom cyan color
+				'primary-via': '#66378c',  // Replace with your custom cyan color
+				'primary-to': '#c5abd9', // Replace with your custom blue color
+			},
+		},
+	},	plugins: [],
 }
 
