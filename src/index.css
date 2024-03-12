@@ -10,11 +10,21 @@
 body {
     margin: 0;
     background-color: #361D4A;
+    scrollbar-color: #66378c #66378c;
+    scroll-behavior: smooth;
 }
 
 .appears-content {
     animation: fadeInOut .5s ease-out 1s forwards;
     opacity: 0;
+
+    --mask: linear-gradient(to bottom,
+    rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 0
+    ) 50% 50% / 100% 100% repeat-x;
+
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
 }
 
 @keyframes fadeInOut {

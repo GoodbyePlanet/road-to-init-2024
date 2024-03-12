@@ -61,12 +61,12 @@ export const UI = () => {
 				)}
 				{isOnPage(PAGES.SPEAKERS) && (
 					<div
-						className="appears-content w-4/5 fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg z-10">
+						className="appears-content overflow-scroll pointer-events-auto h-4/6 w-4/5 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg z-10">
 						<div className="grid grid-cols-3 gap-10 place-items-center font-mono text-white">
 							{SPEAKERS.map(speaker => {
 								return (
 									<div
-										className="w-4/5 rounded-lg p-6 backdrop-blur-sm bg-white/5 backdrop-brightness-150">
+										className=" w-4/5 rounded-lg p-6 backdrop-blur-sm bg-white/5 backdrop-brightness-150">
 										<figure>
 											<div className="h-48 overflow-hidden flex justify-center">
 												<img src="placeholder1.png" alt="placeholder" className="h-full object-cover invert"/>
