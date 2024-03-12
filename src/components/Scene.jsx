@@ -14,7 +14,7 @@ reddishBloomColor.multiplyScalar(12);
 const FONT = 'fonts/roboto.ttf';
 const {DEG2RAD} = MathUtils;
 
-export const Experience = () => {
+const Scene = () => {
 	const controls = useRef();
 	const fitScreenCamera = useRef();
 	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
@@ -103,3 +103,5 @@ export const Experience = () => {
 };
 
 useFont.preload(FONT);
+
+export default Scene;

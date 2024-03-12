@@ -1,7 +1,7 @@
 import {Suspense} from "react";
 import {Provider} from "jotai";
 import {Canvas} from "@react-three/fiber";
-import {Experience} from "./components/Experience";
+import Scene from "./components/Scene.jsx";
 import {Bloom, EffectComposer} from "@react-three/postprocessing";
 import {UI} from "./components/UI.jsx";
 import Logo from "./components/Logo.jsx";
@@ -16,7 +16,7 @@ const App = () => {
 				<color attach="background" args={[BACKGROUND_COLOR]}/>
 				<fog attach="fog" args={[BACKGROUND_COLOR, 8, 20]}/>
 				<Suspense fallback={null}>
-					<Experience/>
+					<Scene/>
 				</Suspense>
 				<EffectComposer>
 					<Bloom mipmapBlur intensity={1.2}/>
