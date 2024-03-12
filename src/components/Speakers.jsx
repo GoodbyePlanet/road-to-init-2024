@@ -8,18 +8,22 @@ const Speakers = () => (
 			{SPEAKERS.map(({name, image, presentationTopic, presentationDescription}) => {
 				return (
 					<div
-						className=" w-4/5 rounded-lg p-6 backdrop-blur-sm bg-white/5 backdrop-brightness-150">
+						className=" w-4/5 max-h-[470px] rounded-lg p-6 backdrop-blur-sm bg-white/5 backdrop-brightness-150">
 						<figure>
 							<div className="h-48 overflow-hidden flex justify-center">
 								<img src={image} alt="placeholder" className="h-full object-cover invert"/>
 							</div>
+							<div className="pt-4 pl-4">
+								<p>{name}</p>
+							</div>
 							<figcaption className="p-4">
 								<p
-									className="text-lg mb-4 font-bold leading-relaxed text-gray-800 dark:text-gray-300">
+									className="text-base mb-4 font-bold leading-relaxed text-gray-800 dark:text-gray-300">
 									{presentationTopic}
 								</p>
 								<small
-									className="leading-5 text-gray-500 dark:text-gray-400 line-clamp-4">{presentationDescription}</small>
+									className="leading-5 text-gray-500 dark:text-gray-400 line-clamp-4">{presentationDescription}
+								</small>
 							</figcaption>
 						</figure>
 					</div>
