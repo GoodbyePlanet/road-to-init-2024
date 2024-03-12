@@ -56,13 +56,14 @@ export const UI = () => {
 						</p>
 						<p className="mb-4 text-base text-wrap">
 							Brief intro about everyone involved in making INIT possible.
+							It can be about something else...
 						</p>
 					</div>
 				)}
 				{isOnPage(PAGES.SPEAKERS) && (
 					<div
 						className="appears-content overflow-scroll pointer-events-auto h-4/6 w-4/5 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg z-10">
-						<div className="grid grid-cols-3 gap-10 place-items-center font-mono text-white">
+						<div className="grid grid-cols-3 gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center font-mono text-white">
 							{SPEAKERS.map(speaker => {
 								return (
 									<div
