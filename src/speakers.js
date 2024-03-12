@@ -1,20 +1,39 @@
 export const SPEAKERS = [
 	{
-		name: 'Speaker one'
+		name: 'Luna Stardust',
+		image: "placeholder.png",
+		presentationTopic: 'Unveiling the Mysteries of Quantum Entanglement',
+		presentationDescription: 'Explore the fascinating world of quantum entanglement and its implications for future technologies.'
 	},
 	{
-		name: 'Speaker two'
+		name: 'Maximilian Thunderbolt',
+		image: "placeholder.png",
+		presentationTopic: 'Journey into the Cosmos: Exploring Exoplanets',
+		presentationDescription: 'Embark on a thrilling journey through space as we discover new exoplanets and the potential for extraterrestrial life.'
 	},
 	{
-		name: 'Speaker three'
+		name: 'Aurora Borealis',
+		image: "placeholder.png",
+		presentationTopic: 'The Art of Mindfulness in a Digital Age',
+		presentationDescription: 'Learn how to cultivate mindfulness and find inner peace in a fast-paced digital world.'
 	},
 	{
-		name: 'Speaker one'
+		name: 'Zephyr Firestorm',
+		image: "placeholder.png",
+		presentationTopic: 'Unlocking Creativity: The Power of Imagination',
+		presentationDescription: 'Dive into the depths of creativity and unleash your imagination to innovate and inspire.'
 	},
 	{
-		name: 'Speaker two'
+		name: 'Nova Eclipse',
+		image: "placeholder.png",
+		presentationTopic: 'The Future of Artificial Intelligence',
+		presentationDescription: 'Discover the latest advancements in AI technology and its potential impact on society.'
 	},
 	{
-		name: 'Speaker three'
+		name: 'Stella Moonbeam',
+		image: "placeholder.png",
+		presentationTopic: 'Exploring the Wonders of Virtual Reality',
+		presentationDescription: 'Immerse yourself in virtual worlds and experience the cutting-edge technology of virtual reality.'
 	}
-]
+];
+

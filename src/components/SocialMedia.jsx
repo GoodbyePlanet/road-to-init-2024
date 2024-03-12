@@ -1,4 +1,4 @@
-export const SOCIAL_MEDIA = [
+const SOCIAL_MEDIA = [
 	{
 		company: "Facebook",
 		icon: <svg
@@ -36,3 +36,24 @@ export const SOCIAL_MEDIA = [
 		link: "https://github.com/init-conference"
 	}
 ]
+
+const SocialMedia = () => {
+	const handleOnClick = (link) => {
+		window.open(link, "_blank");
+	}
+
+	return (
+		<>
+			{SOCIAL_MEDIA.map(({icon, link, company}) => (
+				<button
+					key={company}
+					onClick={() => handleOnClick(link)}
+					className="pointer-events-auto py-2 px-8 bg-white-400 text-white font-semibold cursor-pointer transition-colors duration-500">
+					{icon}
+				</button>
+			))}
+		</>
+	)
+}
+
+export default SocialMedia;

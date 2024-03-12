@@ -17,6 +17,11 @@ body {
 .appears-content {
     animation: fadeInOut .5s ease-out 1s forwards;
     opacity: 0;
+}
+
+.appears-content-with-mask {
+    animation: fadeInOut .5s ease-out 1s forwards;
+    opacity: 0;
 
     --mask: linear-gradient(to bottom,
     rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 80%,
