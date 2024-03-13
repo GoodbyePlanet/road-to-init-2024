@@ -1,12 +1,12 @@
 import {useEffect} from "react";
 import {useFrame, useLoader} from "@react-three/fiber";
 import {LinearEncoding, RepeatWrapping, TextureLoader} from "three";
-import {MeshReflectorMaterial} from "@react-three/drei";
+import {MeshReflectorMaterial, useTexture} from "@react-three/drei";
 
 const Ground = () => {
 	const [roughness, normal] = useLoader(TextureLoader, [
 		"textures/wood_planks_grey_diff_2k.jpg",
-		"textures/polystyrene_diff_4k.jpg",
+		"textures/polystyrene_diff_1k.jpg",
 	]);
 
 	useEffect(() => {
@@ -17,7 +17,7 @@ const Ground = () => {
 			t.offset.set(0, 0);
 		});
 
-		normal.encoding = LinearEncoding;
+		// normal.encoding = LinearEncoding;
 		roughness.encoding = LinearEncoding;
 	}, [normal, roughness]);
 
@@ -51,5 +51,8 @@ const Ground = () => {
 		</mesh>
 	)
 }
+
+useTexture.preload("textures/wood_planks_grey_diff_2k.jpg");
+useTexture.preload("textures/polystyrene_diff_1k.jpg");
 
 export default Ground;

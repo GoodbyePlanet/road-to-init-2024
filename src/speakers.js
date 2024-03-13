@@ -34,6 +34,18 @@ export const SPEAKERS = [
 		image: "placeholder.png",
 		presentationTopic: 'Exploring the Wonders of Virtual Reality',
 		presentationDescription: 'Immerse yourself in virtual worlds and experience the cutting-edge technology of virtual reality.'
+	},
+	{
+		name: 'Orion Starlight',
+		image: "placeholder.png",
+		presentationTopic: 'Astrophotography: Capturing the Beauty of the Night Sky',
+		presentationDescription: 'Learn the art and techniques of capturing stunning images of celestial objects and the night sky.'
+	},
+	{
+		name: 'Celeste Stardust',
+		image: "placeholder.png",
+		presentationTopic: 'The Magic of Astronomy: A Journey through the Cosmos',
+		presentationDescription: 'Embark on an awe-inspiring journey through the cosmos and learn about the wonders of the universe.'
 	}
 ];
 
