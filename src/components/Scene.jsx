@@ -63,7 +63,7 @@ const Scene = () => {
           await resetCameraToInitialPosition(true);
           break;
         default:
-          console.error('Unknown camera transition operation!');
+          return;
       }
     };
 

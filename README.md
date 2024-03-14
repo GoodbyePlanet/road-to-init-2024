@@ -1,10 +1,15 @@
-# r3f-vite-starter
+# INIT 2024 Landing Page
 
-A boilerplate to build R3F projects
+An idea for INIT conference 2024 Landing Page
 
 ```
 yarn
 yarn dev
 ```
 
-![image](https://user-images.githubusercontent.com/6551176/221732091-23ee52cb-4150-42fa-b998-43628d7a6b0d.png)
+![home_img.png](home_img.png)
+![speakers_img.png](speakers_img.png)
+
+Thanks to:
+
+[Wassim](https://github.com/wass08) for initial R3F template
