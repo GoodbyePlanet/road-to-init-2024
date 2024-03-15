@@ -1,7 +1,7 @@
 import { memo, useEffect } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { RepeatWrapping, TextureLoader } from 'three';
-import { MeshReflectorMaterial, useTexture } from '@react-three/drei';
+import { MeshReflectorMaterial } from '@react-three/drei';
 
 const Ground = () => {
   const roughness = useLoader(
@@ -29,7 +29,7 @@ const Ground = () => {
       <planeGeometry args={[100, 100]} />
       <MeshReflectorMaterial
         roughnessMap={roughness}
-        roughness={1}
+        roughness={1.2}
         blur={[100, 100]}
         resolution={2048}
         mixBlur={1}
@@ -47,6 +47,6 @@ const Ground = () => {
   );
 };
 
-useTexture.preload('textures/wood_planks_grey_diff_2k.jpg');
+useLoader.preload(TextureLoader, 'textures/wood_planks_grey_diff_2k.jpg');
 
 export default memo(Ground);
