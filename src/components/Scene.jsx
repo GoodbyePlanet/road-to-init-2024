@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import { CameraControls, Environment, Text, useFont } from '@react-three/drei';
 import Horse from './Model.jsx';
 import { Color, MathUtils } from 'three';
@@ -76,7 +76,7 @@ const Scene = () => {
     setTimeout(() => {
       setCurrentPage(PAGES.HOME);
     }, 1200);
-    fitCamera();
+    await fitCamera();
   };
 
   const fitCamera = async () => {
@@ -140,4 +140,4 @@ const Scene = () => {
 
 useFont.preload(FONT);
 
-export default Scene;
+export default memo(Scene);
