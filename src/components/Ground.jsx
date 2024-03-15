@@ -23,7 +23,6 @@ const Ground = () => {
     roughness.offset.set(0, time % 1);
   });
 
-  console.log('LOADING GROUND...');
   return (
     <mesh position-y={-0.8} rotation-x={-Math.PI / 2}>
       <planeGeometry args={[100, 100]} />
