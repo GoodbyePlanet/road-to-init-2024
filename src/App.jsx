@@ -5,7 +5,7 @@ import Scene from './components/Scene.jsx';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { UI } from './components/UI.jsx';
 import Logo from './components/Logo.jsx';
-import Loader from './components/Loader.jsx';
+import ProgressBar from './components/ProgressBar.jsx';
 import { BACKGROUND_COLOR } from './colors.js';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
       <Canvas shadows camera={{ position: [0, 0, 8], fov: 45 }}>
         <color attach="background" args={[BACKGROUND_COLOR]} />
         <fog attach="fog" args={[BACKGROUND_COLOR, 8, 20]} />
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<ProgressBar />}>
           <Scene />
         </Suspense>
         <EffectComposer>
