@@ -2,6 +2,8 @@
 
 An idea for INIT conference 2024 Landing Page
 
+Application Link https://init-lp-2024.vercel.app/
+
 ```
 yarn
 yarn dev
