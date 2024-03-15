@@ -29,8 +29,8 @@ const Ground = () => {
       <MeshReflectorMaterial
         roughnessMap={roughness}
         roughness={1.2}
+        resolution={800}
         blur={[100, 100]}
-        resolution={2048}
         mixBlur={1}
         mixStrength={10}
         depthScale={1}
@@ -41,6 +41,7 @@ const Ground = () => {
         color="#333"
         metalness={0.5}
         mirror={1}
+        dithering
       />
     </mesh>
   );
