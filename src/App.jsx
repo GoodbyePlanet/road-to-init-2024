@@ -5,8 +5,8 @@ import Scene from './components/Scene.jsx';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { UI } from './components/UI.jsx';
 import Logo from './components/Logo.jsx';
-import ProgressBar from './components/ProgressBar.jsx';
 import { BACKGROUND_COLOR } from './colors.js';
+import ProgressBar from './components/ProgressBar.jsx';
 
 const App = () => {
   return (
