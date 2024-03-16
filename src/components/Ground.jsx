@@ -4,10 +4,7 @@ import { RepeatWrapping, TextureLoader } from 'three';
 import { MeshReflectorMaterial } from '@react-three/drei';
 
 const Ground = () => {
-  const roughness = useLoader(
-    TextureLoader,
-    'textures/wood_planks_grey_diff_2k.jpg',
-  );
+  const roughness = useLoader(TextureLoader, 'textures/wood.jpg');
 
   useEffect(() => {
     roughness.wrapS = RepeatWrapping;
@@ -26,6 +23,7 @@ const Ground = () => {
   return (
     <mesh position-y={-0.8} rotation-x={-Math.PI / 2}>
       <planeGeometry args={[100, 100]} />
+      {/*<meshStandardMaterial map={roughness} />*/}
       <MeshReflectorMaterial
         roughnessMap={roughness}
         roughness={1.2}
@@ -47,6 +45,6 @@ const Ground = () => {
   );
 };
 
-useLoader.preload(TextureLoader, 'textures/wood_planks_grey_diff_2k.jpg');
+useLoader.preload(TextureLoader, 'textures/wood.jpg');
 
 export default memo(Ground);
