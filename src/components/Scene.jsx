@@ -12,7 +12,7 @@ whiteBloomColor.multiplyScalar(5);
 const reddishBloomColor = new Color(REDDISH_BLOOM_COLOR);
 reddishBloomColor.multiplyScalar(12);
 
-const FONT = 'fonts/roboto.ttf';
+const FONT = 'fonts/roboto-webfont.ttf';
 const { DEG2RAD } = MathUtils;
 
 const Scene = () => {
@@ -71,8 +71,8 @@ const Scene = () => {
   }, [currentPage]);
 
   const loadingExperience = async () => {
-    await controls.current.dolly(-12);
-    controls.current.smoothTime = 1.4;
+    await setCameraDolly(-12);
+    setCameraSmoothTime(1.4);
     setTimeout(() => {
       setCurrentPage(PAGES.HOME);
     }, 1200);
