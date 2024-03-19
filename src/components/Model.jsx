@@ -7,9 +7,8 @@ import { useAnimations, useGLTF } from '@react-three/drei';
 
 const Horse = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('models/Horse_done.glb');
+  const { nodes, materials, animations } = useGLTF('models/Horse.glb');
   const { actions } = useAnimations(animations, group);
-  const scaleFactor = 0.017;
 
   useEffect(() => {
     actions['horse_A_'].play();
@@ -62,6 +61,6 @@ const Horse = (props) => {
   );
 };
 
-useGLTF.preload('/models/Horse_done.glb');
+useGLTF.preload('/models/Horse.glb');
 
 export default memo(Horse);

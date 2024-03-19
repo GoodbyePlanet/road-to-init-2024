@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { RepeatWrapping, TextureLoader } from 'three';
 import { MeshReflectorMaterial } from '@react-three/drei';
@@ -21,27 +21,29 @@ const Ground = () => {
   });
 
   return (
-    <mesh position-y={-0.8} rotation-x={-Math.PI / 2}>
-      <planeGeometry args={[100, 100]} />
-      {/*<meshStandardMaterial map={roughness} />*/}
-      <MeshReflectorMaterial
-        roughnessMap={roughness}
-        roughness={1.2}
-        resolution={800}
-        blur={[100, 100]}
-        mixBlur={1}
-        mixStrength={10}
-        depthScale={1}
-        opacity={0.5}
-        transparent
-        minDepthThreshold={0.4}
-        maxDepthThreshold={1.4}
-        color="#333"
-        metalness={0.5}
-        mirror={1}
-        dithering
-      />
-    </mesh>
+    <Suspense fallback={null}>
+      <mesh position-y={-0.8} rotation-x={-Math.PI / 2}>
+        <planeGeometry args={[100, 100]} />
+        {/*<meshStandardMaterial map={roughness} />*/}
+        <MeshReflectorMaterial
+          roughnessMap={roughness}
+          roughness={1.2}
+          resolution={800}
+          blur={[100, 100]}
+          mixBlur={1}
+          mixStrength={10}
+          depthScale={1}
+          opacity={0.5}
+          transparent
+          minDepthThreshold={0.4}
+          maxDepthThreshold={1.4}
+          color="#333"
+          metalness={0.5}
+          mirror={1}
+          dithering
+        />
+      </mesh>
+    </Suspense>
   );
 };
 

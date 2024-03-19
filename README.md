@@ -24,5 +24,4 @@ TODOs:
 
 - Nested Suspense
 - Find smaller font - done used [fontsquirrel](https://www.fontsquirrel.com/tools/webfont-generator)
-- Optimize model
 - Add lerp

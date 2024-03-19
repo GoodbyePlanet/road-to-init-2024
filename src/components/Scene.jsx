@@ -119,9 +119,11 @@ const Scene = () => {
             </Text>
           ))}
         </group>
-        <group rotation-y={0} position={[0, -0.8, 0]}>
-          <Horse scale={0.015} />
-        </group>
+        <Suspense fallback={null}>
+          <group rotation-y={0} position={[0, -0.8, 0]}>
+            <Horse scale={0.015} />
+          </group>
+        </Suspense>
         <Text
           font={FONT}
           position={[3.4, 0, -4]}
