@@ -19,9 +19,3 @@ yarn dev
 Thanks to:
 
 [Wassim](https://github.com/wass08) for initial R3F template
-
-TODOs:
-
-- Nested Suspense
-- Find smaller font - done used [fontsquirrel](https://www.fontsquirrel.com/tools/webfont-generator)
-- Add lerp

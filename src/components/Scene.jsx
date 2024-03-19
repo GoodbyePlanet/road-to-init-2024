@@ -4,8 +4,10 @@ import { useAtom } from 'jotai';
 import { Color, MathUtils } from 'three';
 import Horse from './Model.jsx';
 import Ground from './Ground.jsx';
+import ProgressBar from './ProgressBar.jsx';
 import { REDDISH_BLOOM_COLOR, WHITE_BLOOM_COLOR } from '../colors.js';
 import { currentPageAtom, PAGES } from '../atoms.js';
+import dawn from '../assets/dawn.exr.js';
 
 const whiteBloomColor = new Color(WHITE_BLOOM_COLOR);
 whiteBloomColor.multiplyScalar(5);
@@ -100,7 +102,7 @@ const Scene = () => {
         <boxGeometry args={[8, 2, 2]} />
         <meshBasicMaterial color="yellow" transparent opacity={0.5} />
       </mesh>
-      <Suspense fallback={null}>
+      <Suspense fallback={<ProgressBar />}>
         <group position-x={-2}>
           {'INIT'.split('').map((letter, index) => (
             <Text
@@ -137,7 +139,7 @@ const Scene = () => {
         </Text>
         <Ground />
       </Suspense>
-      <Environment preset="sunset" />
+      <Environment files={dawn} />
     </>
   );
 };
