@@ -15,10 +15,7 @@ export const UI = () => {
     currentPage === PAGES.TEAM ||
     currentPage === PAGES.SPEAKERS;
   const isOnPage = (page) => currentPage === page;
-  const shouldShowHomeButton =
-    isOnPage(PAGES.CONFERENCE) ||
-    isOnPage(PAGES.TEAM) ||
-    isOnPage(PAGES.SPEAKERS);
+  const shouldShowHomeButton = isOnPage(PAGES.CONFERENCE) || isOnPage(PAGES.TEAM) || isOnPage(PAGES.SPEAKERS);
 
   return (
     <div className="fixed inset-0 pointer-events-none">

@@ -56,9 +56,7 @@ const Arrows = () => {
     geometry.attributes.position.needsUpdate = true;
   });
 
-  return (
-    <lineSegments ref={linesRef} geometry={geometry} material={material} />
-  );
+  return <lineSegments ref={linesRef} geometry={geometry} material={material} />;
 };
 
 export default Arrows;

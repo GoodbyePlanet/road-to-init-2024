@@ -17,22 +17,19 @@ export const SPEAKERS = [
     name: 'Aurora Borealis',
     image: 'placeholder.png',
     presentationTopic: 'The Art of Mindfulness in a Digital Age',
-    presentationDescription:
-      'Learn how to cultivate mindfulness and find inner peace in a fast-paced digital world.',
+    presentationDescription: 'Learn how to cultivate mindfulness and find inner peace in a fast-paced digital world.',
   },
   {
     name: 'Zephyr Firestorm',
     image: 'placeholder.png',
     presentationTopic: 'Unlocking Creativity: The Power of Imagination',
-    presentationDescription:
-      'Dive into the depths of creativity and unleash your imagination to innovate and inspire.',
+    presentationDescription: 'Dive into the depths of creativity and unleash your imagination to innovate and inspire.',
   },
   {
     name: 'Nova Eclipse',
     image: 'placeholder.png',
     presentationTopic: 'The Future of Artificial Intelligence',
-    presentationDescription:
-      'Discover the latest advancements in AI technology and its potential impact on society.',
+    presentationDescription: 'Discover the latest advancements in AI technology and its potential impact on society.',
   },
   {
     name: 'Stella Moonbeam',
@@ -44,8 +41,7 @@ export const SPEAKERS = [
   {
     name: 'Orion Starlight',
     image: 'placeholder.png',
-    presentationTopic:
-      'Astrophotography: Capturing the Beauty of the Night Sky',
+    presentationTopic: 'Astrophotography: Capturing the Beauty of the Night Sky',
     presentationDescription:
       'Learn the art and techniques of capturing stunning images of celestial objects and the night sky.',
   },

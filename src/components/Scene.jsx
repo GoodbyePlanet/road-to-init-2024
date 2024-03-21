@@ -23,25 +23,15 @@ const Scene = () => {
   const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
 
   const setCameraSmoothTime = (time) => (controls.current.smoothTime = time);
-
   const setCameraDolly = async (distance, enableTransition) =>
     await controls.current?.dolly(distance, enableTransition);
-
-  const setCameraRotation = async (
-    azimuthAngle,
-    polarAngle,
-    enableTransition,
-  ) =>
+  const setCameraRotation = async (azimuthAngle, polarAngle, enableTransition) =>
     await controls.current?.rotate(azimuthAngle, polarAngle, enableTransition);
-
-  const resetCameraToInitialPosition = async (enableTransition) =>
-    await controls.current?.reset(enableTransition);
-
-  const setCameraTruck = async (x, y, enableTransition) =>
-    await controls.current?.truck(x, y, enableTransition);
+  const resetCameraToInitialPosition = async (enableTransition) => await controls.current?.reset(enableTransition);
+  const setCameraTruck = async (x, y, enableTransition) => await controls.current?.truck(x, y, enableTransition);
 
   useEffect(() => {
-    const update = async () => {
+    const updateCameraPosition = async () => {
       switch (currentPage) {
         case PAGES.CONFERENCE:
           setCameraSmoothTime(0.095);
@@ -69,7 +59,7 @@ const Scene = () => {
       }
     };
 
-    update();
+    updateCameraPosition();
   }, [currentPage]);
 
   const loadingExperience = async () => {
@@ -114,10 +104,7 @@ const Scene = () => {
               textAlign="center"
             >
               {letter}
-              <meshBasicMaterial
-                color={index === 1 ? reddishBloomColor : whiteBloomColor}
-                toneMapped={false}
-              />
+              <meshBasicMaterial color={index === 1 ? reddishBloomColor : whiteBloomColor} toneMapped={false} />
             </Text>
           ))}
         </group>
