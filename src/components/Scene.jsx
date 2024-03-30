@@ -7,6 +7,7 @@ import Ground from './Ground.jsx';
 import ProgressBar from './ProgressBar.jsx';
 import { REDDISH_BLOOM_COLOR, WHITE_BLOOM_COLOR } from '../colors.js';
 import { currentPageAtom, PAGES } from '../atoms.js';
+import { gsap } from 'gsap';
 import dawn from '../assets/dawn.exr.js';
 
 const whiteBloomColor = new Color(WHITE_BLOOM_COLOR);
@@ -35,15 +36,30 @@ const Scene = () => {
       switch (currentPage) {
         case PAGES.CONFERENCE:
           setCameraSmoothTime(0.095);
-          await setCameraDolly(-1, true);
-          setCameraSmoothTime(0.5);
-          await setCameraRotation(135 * DEG2RAD, 0, true);
+          setCameraDolly(-3, true);
+          setCameraSmoothTime(0.2);
+          gsap
+            .to(controls.current, {
+              polarAngle: controls.current.polarAngle + -0.4,
+              azimuthAngle: 135 * DEG2RAD,
+              duration: 2,
+              ease: 'expo.inOut',
+            })
+            .play(0);
           break;
         case PAGES.TEAM:
           setCameraSmoothTime(0.095);
-          await setCameraDolly(-1, true);
-          setCameraSmoothTime(0.5);
-          await setCameraRotation(-135 * DEG2RAD, 0, true);
+          setCameraDolly(-3, true);
+          setCameraSmoothTime(0.2);
+          gsap
+            .to(controls.current, {
+              polarAngle: controls.current.polarAngle + -0.4,
+              azimuthAngle: -135 * DEG2RAD,
+              duration: 2,
+              ease: 'expo.inOut',
+              paused: true,
+            })
+            .play(0);
           break;
         case PAGES.SPEAKERS:
           setCameraSmoothTime(0.095);
