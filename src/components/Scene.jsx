@@ -30,6 +30,7 @@ const Scene = () => {
     await controls.current?.rotate(azimuthAngle, polarAngle, enableTransition);
   const resetCameraToInitialPosition = async (enableTransition) => await controls.current?.reset(enableTransition);
   const setCameraTruck = async (x, y, enableTransition) => await controls.current?.truck(x, y, enableTransition);
+  const setCameraRestThreshold = (time) => (controls.current.restThreshold = time);
 
   useEffect(() => {
     const updateCameraPosition = async () => {
@@ -62,6 +63,7 @@ const Scene = () => {
             .play(0);
           break;
         case PAGES.SPEAKERS:
+          setCameraRestThreshold(0.5);
           setCameraSmoothTime(0.095);
           await setCameraDolly(-10, true);
           setCameraSmoothTime(0.5);
