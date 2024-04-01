@@ -104,7 +104,7 @@ const Scene = () => {
 
   return (
     <>
-      <CameraControls makeDefault ref={controls} maxPolarAngle={1.5} />
+      <CameraControls makeDefault ref={controls} maxPolarAngle={1.5} minDistance={5} maxDistance={20} />
       {/*Mesh bellow is here to allow resize responsiveness*/}
       <mesh ref={fitScreenCamera} position-z={0.9} visible={false}>
         <boxGeometry args={[8, 2, 2]} />
