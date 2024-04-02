@@ -26,12 +26,12 @@ const Ground = () => {
         <planeGeometry args={[100, 100]} />
         {/*<meshStandardMaterial map={roughness} />*/}
         <MeshReflectorMaterial
+          // reflectorOffset={-5}
           roughnessMap={roughness}
           roughness={1.2}
           resolution={800}
           blur={[100, 100]}
           mixBlur={1}
-          mixStrength={10}
           depthScale={1}
           opacity={0.5}
           transparent
@@ -39,7 +39,8 @@ const Ground = () => {
           maxDepthThreshold={1.4}
           color="#333"
           metalness={0.5}
-          mirror={1}
+          mixStrength={2.5} // Strength of the reflections
+          mixContrast={1} // Contrast of the reflections
           dithering
         />
       </mesh>
