@@ -5,6 +5,7 @@ import SocialMedia from './SocialMedia.jsx';
 import Conference from './Conference.jsx';
 import Team from './Team.jsx';
 import Speakers from './Speakers.jsx';
+import Gears from './Gears.jsx';
 
 export const UI = () => {
   const [currentPage, _] = useAtom(currentPageAtom);
@@ -32,6 +33,9 @@ export const UI = () => {
             </div>
             <div className="fixed bottom-7 right-4 flex flex-col gap-4">
               <SocialMedia />
+            </div>
+            <div className="svg-container pointer-events-auto cursor-pointer fixed bottom-7 left-9 w-12 hover:accent-yellow-400">
+              <Gears />
             </div>
           </>
         )}
