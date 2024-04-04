@@ -7,6 +7,7 @@ export const PAGES = Object.freeze({
   SPEAKERS: 'speakers',
 });
 
-export const currentPageAtom = atom('');
+export const currentPageAtom = atom(PAGES.HOME);
+export const isSceneLoaded = atom(false);
 
 export const globalStoreAtom = createStore();

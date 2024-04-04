@@ -6,7 +6,7 @@ import Horse from './Model.jsx';
 import Ground from './Ground.jsx';
 import ProgressBar from './ProgressBar.jsx';
 import { BLUE_BLOOM_COLOR, REDDISH_BLOOM_COLOR, WHITE_BLOOM_COLOR, YELLOW_BLOOM_COLOR } from '../colors.js';
-import { currentPageAtom, PAGES } from '../atoms.js';
+import { currentPageAtom, isSceneLoaded, PAGES } from '../atoms.js';
 import { gsap } from 'gsap';
 import dawn from '../assets/dawn.exr.js';
 
@@ -25,7 +25,8 @@ const { DEG2RAD } = MathUtils;
 const Scene = () => {
   const controls = useRef();
   const fitScreenCamera = useRef();
-  const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+  const [currentPage, _] = useAtom(currentPageAtom);
+  const [__, setSceneLoaded] = useAtom(isSceneLoaded);
 
   const setCameraSmoothTime = (time) => (controls.current.smoothTime = time);
   const setCameraDolly = async (distance, enableTransition) =>
@@ -88,8 +89,8 @@ const Scene = () => {
     await setCameraDolly(-12);
     setCameraSmoothTime(1.4);
     setTimeout(() => {
-      setCurrentPage(PAGES.HOME);
-    }, 1200);
+      setSceneLoaded(true);
+    }, 2000);
     await fitCamera();
   };
 
