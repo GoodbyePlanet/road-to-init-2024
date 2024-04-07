@@ -32,19 +32,28 @@ export const UI = () => {
               <Button page={PAGES.SPEAKERS} />
               <Button page={PAGES.TEAM} />
             </div>
-            <div className="fixed bottom-7 right-4 flex flex-col gap-4">
-              <SocialMedia />
-            </div>
-            <div className="pointer-events-auto cursor-pointer fixed bottom-7 left-9 w-12 hover:accent-yellow-400">
-              <Gears />
-            </div>
+            <ContactContainer />
           </>
         )}
         {shouldShowHomeButton && <Button page={PAGES.HOME} />}
-        {isOnPage(PAGES.CONFERENCE) && <Conference />}
-        {isOnPage(PAGES.TEAM) && <Team />}
+        {isOnPage(PAGES.CONFERENCE) && <ContactContainer Component={Conference} />}
+        {isOnPage(PAGES.TEAM) && <ContactContainer Component={Team} />}
         {isOnPage(PAGES.SPEAKERS) && <Speakers />}
       </section>
     </div>
+  );
+};
+
+const ContactContainer = ({ Component }) => {
+  return (
+    <>
+      {Component && <Component />}
+      <div className="fixed bottom-7 right-4 flex flex-col gap-4">
+        <SocialMedia />
+      </div>
+      <div className="pointer-events-auto cursor-pointer fixed bottom-7 left-9 w-12 hover:accent-yellow-400">
+        <Gears />
+      </div>
+    </>
   );
 };
