@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary: #361d4a;
+    --secondary: #66378c;
+    --white: #ffffff;
+}
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -9,8 +15,8 @@
 
 body {
   margin: 0;
-  background-color: #361d4a;
-  scrollbar-color: #66378c #66378c;
+  background-color: var(--primary);
+  scrollbar-color: var(--secondary) var(--secondary);
   scroll-behavior: smooth;
 }
 

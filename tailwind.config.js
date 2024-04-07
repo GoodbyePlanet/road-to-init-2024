@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-from': '#361D4A', // Replace with your custom cyan color
-        'primary-via': '#66378c', // Replace with your custom cyan color
-        'primary-to': '#c5abd9', // Replace with your custom blue color
+        'primary-from': '#361D4A',
+        'primary-via': '#66378c',
+        'primary-to': '#c5abd9',
         'init-blue': '#1FC7D8',
       },
     },
