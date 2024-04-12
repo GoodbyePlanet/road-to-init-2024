@@ -20,7 +20,9 @@ const App = () => {
           <Bloom mipmapBlur intensity={1.2} />
         </EffectComposer>
       </Canvas>
-      <UI />
+      <Suspense fallback={null}>
+        <UI />
+      </Suspense>
     </Provider>
   );
 };

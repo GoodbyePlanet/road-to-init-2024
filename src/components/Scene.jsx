@@ -36,7 +36,7 @@ const Scene = () => {
   const resetCameraToInitialPosition = async (enableTransition) => await controls.current?.reset(enableTransition);
   const setCameraTruck = async (x, y, enableTransition) => await controls.current?.truck(x, y, enableTransition);
   const setCameraRestThreshold = (time) => (controls.current.restThreshold = time);
-  const fixSceneToView = (camera) => controls.current.fitToBox(camera, true);
+  const fixSceneToView = (camera) => controls.current.fitToBox(camera, true, { paddingTop: 0.3 });
 
   useEffect(() => {
     const updateCameraPosition = async () => {
@@ -86,8 +86,12 @@ const Scene = () => {
     updateCameraPosition();
   }, [currentPage]);
 
+  useEffect(() => {
+    loadingExperience();
+  }, []);
+
   const loadingExperience = async () => {
-    await setCameraDolly(-12);
+    await setCameraDolly(-15);
     setCameraSmoothTime(1.4);
     setTimeout(() => {
       setSceneLoaded(true);
@@ -96,17 +100,15 @@ const Scene = () => {
   };
 
   const fitCamera = async () => {
-    fixSceneToView(fitScreenCamera.current);
+    if (currentPage === PAGES.HOME) {
+      fixSceneToView(fitScreenCamera.current);
+    }
   };
-
-  useEffect(() => {
-    loadingExperience();
-  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', fitCamera);
     return () => window.removeEventListener('resize', fitCamera);
-  }, []);
+  }, [currentPage]);
 
   return (
     <>
