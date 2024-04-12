@@ -54,7 +54,7 @@ const Scene = () => {
             })
             .play(0);
           break;
-        case PAGES.TEAM:
+        case PAGES.CONTACT:
           setCameraSmoothTime(0.095);
           setCameraDolly(-3, true);
           setCameraSmoothTime(0.2);

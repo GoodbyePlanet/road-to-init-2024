@@ -3,7 +3,7 @@ import { currentPageAtom, isSceneLoaded, PAGES } from '../atoms.js';
 import Button from './Button.jsx';
 import SocialMedia from './SocialMedia.jsx';
 import Conference from './Conference.jsx';
-import Team from './Team.jsx';
+import Contact from './Contact.jsx';
 import Speakers from './Speakers.jsx';
 import Gears from './Gears.jsx';
 
@@ -14,10 +14,10 @@ export const UI = () => {
   const shouldShowButtons =
     currentPage === PAGES.HOME ||
     currentPage === PAGES.CONFERENCE ||
-    currentPage === PAGES.TEAM ||
+    currentPage === PAGES.CONTACT ||
     currentPage === PAGES.SPEAKERS;
   const isOnPage = (page) => currentPage === page;
-  const shouldShowHomeButton = isOnPage(PAGES.CONFERENCE) || isOnPage(PAGES.TEAM) || isOnPage(PAGES.SPEAKERS);
+  const shouldShowHomeButton = isOnPage(PAGES.CONFERENCE) || isOnPage(PAGES.CONTACT) || isOnPage(PAGES.SPEAKERS);
 
   return (
     <div className="fixed inset-0 pointer-events-none">
@@ -30,14 +30,14 @@ export const UI = () => {
             <div className="flex gap-2">
               <Button page={PAGES.CONFERENCE} />
               <Button page={PAGES.SPEAKERS} />
-              <Button page={PAGES.TEAM} />
+              <Button page={PAGES.CONTACT} />
             </div>
             <ContactContainer />
           </>
         )}
         {shouldShowHomeButton && <Button page={PAGES.HOME} />}
         {isOnPage(PAGES.CONFERENCE) && <ContactContainer Component={Conference} />}
-        {isOnPage(PAGES.TEAM) && <ContactContainer Component={Team} />}
+        {isOnPage(PAGES.CONTACT) && <ContactContainer Component={Contact} />}
         {isOnPage(PAGES.SPEAKERS) && <Speakers />}
       </section>
     </div>

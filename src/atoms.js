@@ -3,7 +3,7 @@ import { atom, createStore } from 'jotai';
 export const PAGES = Object.freeze({
   HOME: 'home',
   CONFERENCE: 'conference',
-  TEAM: 'team',
+  CONTACT: 'contact',
   SPEAKERS: 'speakers',
 });
 
