@@ -1,6 +1,11 @@
 const Conference = () => (
   <>
     <div className="appears-content absolute left-7 top-56 rounded-lg p-6 w-4/12 backdrop-blur-sm bg-white/5 backdrop-brightness-150 font-mono text-white">
+      <p className="uppercase 3xl:text-[32px] 2xl:text-[28px] xl:text-[22px] text-lg 3xl:mb-12 2xl:mb-5 mb-8 3xl:max-w-[619px] 2xl:max-w-[500px] xl:max-w-[460px]">
+        LETS MEET ON SEPTEMBER 2024 BANSKI DVOR / BANJA LUKA
+      </p>
+
+      <p className="uppercase mt-2 mb-2">History</p>
       <p className="mb-4 text-base text-wrap">
         INIT was started in 2019 as a non-profit technology conference focused on development of a successful community
         of professionals in the field of software development.

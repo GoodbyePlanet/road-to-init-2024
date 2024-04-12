@@ -25,19 +25,15 @@ export const UI = () => {
         className={`flex w-full h-full flex-col items-center justify-center duration-500 ${shouldShowButtons ? '' : 'opacity-0'}`}
       >
         <div className="h-[88%]"></div>
-        {isOnPage(PAGES.HOME) && sceneLoaded && (
-          <div className="appears-content flex gap-2">
-            <Button page={PAGES.CONFERENCE} />
-            <Button page={PAGES.SPEAKERS} />
-            <Button page={PAGES.CONTACT} />
-          </div>
-        )}
-        {shouldShowHomeButton && <Button page={PAGES.HOME} />}
-        {isOnPage(PAGES.CONFERENCE) && <Conference />}
-        {isOnPage(PAGES.CONTACT) && <Contact />}
-        {isOnPage(PAGES.SPEAKERS) && <Speakers />}
         {sceneLoaded && (
           <div className="appears-content">
+            {isOnPage(PAGES.HOME) && (
+              <div className="flex gap-2">
+                <Button page={PAGES.CONFERENCE} />
+                <Button page={PAGES.SPEAKERS} />
+                <Button page={PAGES.CONTACT} />
+              </div>
+            )}
             <div className="fixed bottom-7 right-4 flex flex-col gap-4">
               <SocialMedia />
             </div>
@@ -46,6 +42,10 @@ export const UI = () => {
             </div>
           </div>
         )}
+        {shouldShowHomeButton && <Button page={PAGES.HOME} />}
+        {isOnPage(PAGES.CONFERENCE) && <Conference />}
+        {isOnPage(PAGES.CONTACT) && <Contact />}
+        {isOnPage(PAGES.SPEAKERS) && <Speakers />}
       </section>
     </div>
   );
