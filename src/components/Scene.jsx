@@ -36,7 +36,7 @@ const Scene = () => {
   const resetCameraToInitialPosition = async (enableTransition) => await controls.current?.reset(enableTransition);
   const setCameraTruck = async (x, y, enableTransition) => await controls.current?.truck(x, y, enableTransition);
   const setCameraRestThreshold = (time) => (controls.current.restThreshold = time);
-  const fixSceneToView = (camera) => controls.current.fitToBox(camera, true, { paddingTop: 0.3 });
+  const fixSceneToView = (camera) => controls.current.fitToBox(camera, true, { paddingTop: 0 });
 
   useEffect(() => {
     const updateCameraPosition = async () => {
@@ -112,10 +112,10 @@ const Scene = () => {
 
   return (
     <>
-      <CameraControls makeDefault ref={controls} maxPolarAngle={1.5} minDistance={5} maxDistance={20} />
+      <CameraControls makeDefault ref={controls} maxPolarAngle={1.6} minDistance={5} maxDistance={20} />
       {/*Mesh bellow is here to allow resize responsiveness*/}
       <mesh ref={fitScreenCamera} position-z={0.9} visible={false}>
-        <boxGeometry args={[8, 2, 2]} />
+        <boxGeometry args={[9, 2, 2]} />
         <meshBasicMaterial color="yellow" transparent opacity={0.5} />
       </mesh>
       <Suspense fallback={<ProgressBar />}>
