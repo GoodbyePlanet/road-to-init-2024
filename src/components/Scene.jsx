@@ -90,6 +90,11 @@ const Scene = () => {
     loadingExperience();
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('resize', fitCamera);
+    return () => window.removeEventListener('resize', fitCamera);
+  }, [currentPage]);
+
   const loadingExperience = async () => {
     await setCameraDolly(-15);
     setCameraSmoothTime(1.4);
@@ -104,11 +109,6 @@ const Scene = () => {
       fixSceneToView(fitScreenCamera.current);
     }
   };
-
-  useEffect(() => {
-    window.addEventListener('resize', fitCamera);
-    return () => window.removeEventListener('resize', fitCamera);
-  }, [currentPage]);
 
   return (
     <>

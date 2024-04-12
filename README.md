@@ -13,7 +13,7 @@ yarn
 yarn dev
 ```
 
-![home_img.png](home_img.png)
+![img_2.png](home_img.png)
 ![speakers_img.png](speakers_img.png)
 
 Thanks to:

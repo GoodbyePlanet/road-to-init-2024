@@ -26,7 +26,7 @@ export const UI = () => {
       >
         <div className="h-[88%]"></div>
         {isOnPage(PAGES.HOME) && sceneLoaded && (
-          <div className="flex gap-2">
+          <div className="appears-content flex gap-2">
             <Button page={PAGES.CONFERENCE} />
             <Button page={PAGES.SPEAKERS} />
             <Button page={PAGES.CONTACT} />
@@ -37,14 +37,14 @@ export const UI = () => {
         {isOnPage(PAGES.CONTACT) && <Contact />}
         {isOnPage(PAGES.SPEAKERS) && <Speakers />}
         {sceneLoaded && (
-          <>
+          <div className="appears-content">
             <div className="fixed bottom-7 right-4 flex flex-col gap-4">
               <SocialMedia />
             </div>
             <div className="pointer-events-auto cursor-pointer fixed bottom-7 left-9 w-12 hover:accent-yellow-400">
               <Gears />
             </div>
-          </>
+          </div>
         )}
       </section>
     </div>
