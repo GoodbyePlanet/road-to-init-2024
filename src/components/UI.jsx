@@ -20,9 +20,9 @@ export const UI = () => {
   const shouldShowHomeButton = isOnPage(PAGES.CONFERENCE) || isOnPage(PAGES.CONTACT) || isOnPage(PAGES.SPEAKERS);
 
   return (
-    <div className="fixed inset-0 pointer-events-none">
+    <div className="pointer-events-none fixed inset-0">
       <section
-        className={`flex w-full h-full flex-col items-center justify-center duration-500 ${shouldShowButtons ? '' : 'opacity-0'}`}
+        className={`flex h-full w-full flex-col items-center justify-center duration-500 ${shouldShowButtons ? '' : 'opacity-0'}`}
       >
         <div className="h-[88%]"></div>
         {sceneLoaded && (
@@ -37,7 +37,7 @@ export const UI = () => {
             <div className="fixed bottom-7 right-4 flex flex-col gap-4">
               <SocialMedia />
             </div>
-            <div className="pointer-events-auto cursor-pointer fixed bottom-7 left-9 w-12 hover:accent-yellow-400">
+            <div className="pointer-events-auto fixed bottom-7 left-9 w-12 cursor-pointer hover:accent-yellow-400">
               <Gears />
             </div>
           </div>

@@ -5,9 +5,9 @@ const ProgressBar = () => {
 
   return (
     <Html center>
-      <div className="text-center mt-2 text-white font-mono text-2xl">{Math.round(progress)}%</div>
-      <div className="w-64 h-8 bg-primary-to relative overflow-hidden rounded-md border-double border-4 border-primary-to">
-        <div className="h-full bg-primary-via absolute top-0 left-0" style={{ width: `${progress}%` }}></div>
+      <div className="mt-2 text-center font-mono text-2xl text-white">{Math.round(progress)}%</div>
+      <div className="relative h-8 w-64 overflow-hidden rounded-md border-4 border-double border-primary-to bg-primary-to">
+        <div className="absolute left-0 top-0 h-full bg-primary-via" style={{ width: `${progress}%` }}></div>
       </div>
     </Html>
   );

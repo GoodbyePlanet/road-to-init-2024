@@ -8,13 +8,13 @@ const Header = () => {
     return (
       <div>
         <a href="/">
-          <img src="/initlogo.png" alt="logo" className="w-32 left-10 top-10 absolute z-50" />
+          <img src="/initlogo.png" alt="logo" className="absolute left-10 top-10 z-50 w-32" />
         </a>
         <a
           href="https://www.dzobs.com/"
           rel="noreferrer"
           target="_blank"
-          className="w-13 right-40 top-10 absolute z-50 text-white font-semibold"
+          className="w-13 absolute right-40 top-10 z-50 font-semibold text-white"
         >
           <p>DZOBS</p>
         </a>
@@ -22,7 +22,7 @@ const Header = () => {
           href="https://www.flickr.com/photos/195738908@N05/albums/72177720299447854/"
           rel="noreferrer"
           target="_blank"
-          className="w-12 right-24 top-10 absolute z-50 text-white font-semibold"
+          className="absolute right-24 top-10 z-50 w-12 font-semibold text-white"
         >
           <p>INIT 1</p>
         </a>
@@ -30,7 +30,7 @@ const Header = () => {
           href="https://www.flickr.com/photos/195738908@N05/albums/72177720302433321/"
           rel="noreferrer"
           target="_blank"
-          className="w-12 right-10 top-10 absolute z-50 text-white font-semibold"
+          className="absolute right-10 top-10 z-50 w-12 font-semibold text-white"
         >
           <p>INIT 2</p>
         </a>

@@ -1,8 +1,8 @@
 const Contact = () => (
   <>
-    <div className="appears-content absolute left-7 top-56 rounded-lg p-6 w-4/12 backdrop-blur-sm bg-white/5 backdrop-brightness-150 font-mono text-white">
+    <div className="appears-content absolute left-7 top-56 w-4/12 rounded-lg bg-white/5 p-6 font-mono text-white backdrop-blur-sm backdrop-brightness-150">
       <div className="lg:w-full">
-        <p className="uppercase 3xl:text-[32px] 2xl:text-[28px] xl:text-[22px] text-lg 3xl:mb-12 2xl:mb-5 mb-8 3xl:max-w-[619px] 2xl:max-w-[500px] xl:max-w-[460px]">
+        <p className="3xl:text-[32px] 3xl:mb-12 3xl:max-w-[619px] mb-8 text-lg uppercase xl:max-w-[460px] xl:text-[22px] 2xl:mb-5 2xl:max-w-[500px] 2xl:text-[28px]">
           Are you interested in speaking at Init Conference 2024?
           <br />
           Submit your proposal here.
@@ -10,7 +10,7 @@ const Contact = () => (
         <span className="mb-3 block"></span>
         <a
           target="_blank"
-          className="pointer-events-auto cursor-pointer opacity-70 bracket-button py-1 uppercase"
+          className="bracket-button pointer-events-auto cursor-pointer py-1 uppercase opacity-70"
           href="https://sessionize.com/init-2024"
           rel="noreferrer"
         >
@@ -18,16 +18,16 @@ const Contact = () => (
         </a>
       </div>
     </div>
-    <div className="appears-content absolute right-7 top-56 rounded-lg p-6 w-4/12 backdrop-blur-sm bg-white/5 backdrop-brightness-150 font-mono text-white">
+    <div className="appears-content absolute right-7 top-56 w-4/12 rounded-lg bg-white/5 p-6 font-mono text-white backdrop-blur-sm backdrop-brightness-150">
       <div className="lg:w-full">
-        <h2 className="uppercase 3xl:text-[32px] 2xl:text-[28px] xl:text-[22px] text-lg 3xl:mb-12 2xl:mb-5 mb-8 3xl:max-w-[619px] 2xl:max-w-[500px] xl:max-w-[460px]">
+        <h2 className="3xl:text-[32px] 3xl:mb-12 3xl:max-w-[619px] mb-8 text-lg uppercase xl:max-w-[460px] xl:text-[22px] 2xl:mb-5 2xl:max-w-[500px] 2xl:text-[28px]">
           Do you want to be a sponsor of Init Conference?
           <br />
           You can download our sponsorship packages.
         </h2>
         <a
           target="_blank"
-          className="pointer-events-auto cursor-pointer opacity-70 bracket-button py-1 uppercase"
+          className="bracket-button pointer-events-auto cursor-pointer py-1 uppercase opacity-70"
           href="/assets/sponzorski-paketi-2024.pdf"
           download=""
         >
@@ -35,7 +35,7 @@ const Contact = () => (
         </a>
         <br />
         <a
-          className="pointer-events-auto cursor-pointer opacity-70 bracket-button py-1 uppercase"
+          className="bracket-button pointer-events-auto cursor-pointer py-1 uppercase opacity-70"
           href="mailto:info@initconf.org"
         >
           [ Become a sponsor ]

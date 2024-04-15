@@ -39,7 +39,7 @@ const SocialMedia = () => {
         <button
           key={company}
           onClick={() => handleOnClick(link)}
-          className="pointer-events-auto py-2 px-8 bg-white-400 text-white font-semibold cursor-pointer transition-colors duration-500"
+          className="bg-white-400 pointer-events-auto cursor-pointer px-8 py-2 font-semibold text-white transition-colors duration-500"
         >
           {icon}
         </button>
