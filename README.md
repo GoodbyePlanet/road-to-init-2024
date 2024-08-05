@@ -1,8 +1,9 @@
 # INIT 2024 Landing Page
 
-An idea for INIT conference 2024 Landing Page
+Presentation 
 
-Application Link https://init-lp-2024.vercel.app/
+https://docs.google.com/presentation/d/1j5cu1WPvvFVd-DsTQVkPpzAzcBI3hokB7bIkQKRWhYQ/edit#slide=id.g11e36b95797_0_3
+
 
 ### Currently only supports desktop views.
 
@@ -12,10 +13,3 @@ Application Link https://init-lp-2024.vercel.app/
 yarn
 yarn dev
 ```
-
-![img_2.png](home_img.png)
-![speakers_img.png](speakers_img.png)
-
-Thanks to:
-
-[Wassim](https://github.com/wass08) for initial R3F template
