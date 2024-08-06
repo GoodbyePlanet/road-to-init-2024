@@ -15,16 +15,11 @@ const Ground = () => {
     roughness.colorSpace = 'srgb-linear';
   }, [roughness]);
 
-  useFrame((state) => {
-    let time = -state.clock.getElapsedTime() * 0.158;
-    roughness.offset.set(0, time % 1);
-  });
-
   return (
     <Suspense fallback={null}>
       <mesh position-y={-0.8} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[100, 100]} />
-        {/*<meshStandardMaterial map={roughness} />*/}
+        {/*<meshBasicMaterial color="blue" />*/}
         <MeshReflectorMaterial
           // reflectorOffset={-5}
           roughnessMap={roughness}
@@ -39,8 +34,10 @@ const Ground = () => {
           maxDepthThreshold={1.4}
           color="#333"
           metalness={0.5}
-          mixStrength={2.5} // Strength of the reflections
-          mixContrast={1} // Contrast of the reflections
+          // mixStrength={2.5} // Strength of the reflections
+          // mixContrast={1} // Contrast of the reflections
+          mixStrength={5.5} // Strength of the reflections
+          mixContrast={3} // Contrast of the reflections
           dithering
         />
       </mesh>
