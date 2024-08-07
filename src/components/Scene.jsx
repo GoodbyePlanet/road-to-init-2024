@@ -12,7 +12,6 @@ export const Scene = () => {
         <Ground />
       </mesh>
       <Environment files={dawn} />
-      {/*<Environment preset="forest" />*/}
     </>
   );
 };

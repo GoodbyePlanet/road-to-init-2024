@@ -34,10 +34,8 @@ const Ground = () => {
           maxDepthThreshold={1.4}
           color="#333"
           metalness={0.5}
-          // mixStrength={2.5} // Strength of the reflections
-          // mixContrast={1} // Contrast of the reflections
-          mixStrength={5.5} // Strength of the reflections
-          mixContrast={3} // Contrast of the reflections
+          mixStrength={2.5} // Strength of the reflections
+          mixContrast={1} // Contrast of the reflections
           dithering
         />
       </mesh>
