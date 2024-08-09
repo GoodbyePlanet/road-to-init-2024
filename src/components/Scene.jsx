@@ -1,13 +1,13 @@
 import { memo, Suspense, useEffect, useRef } from 'react';
 import { useAtom } from 'jotai';
 import { Color } from 'three';
+import { currentPageAtom, isSceneLoaded, PAGES } from '../atoms.js';
 import { CameraControls, Environment, OrbitControls, Text, useFont } from '@react-three/drei';
 import Ground from './Ground.jsx';
 import Horse from './Model.jsx';
 import { BLUE_BLOOM_COLOR, REDDISH_BLOOM_COLOR, WHITE_BLOOM_COLOR, YELLOW_BLOOM_COLOR } from '../colors.js';
 
 import dawn from '../assets/dawn.exr.js';
-import { currentPageAtom, isSceneLoaded, PAGES } from '../atoms.js';
 
 const whiteBloomColor = new Color(WHITE_BLOOM_COLOR);
 // whiteBloomColor.multiplyScalar(5);
@@ -32,24 +32,24 @@ const Scene = () => {
     await controls.current?.dolly(distance, enableTransition);
   const fixSceneToView = (camera) => controls.current.fitToBox(camera, true, { paddingTop: 0 });
 
-  useEffect(() => {
-    loadScene();
-  }, []);
-
-  const loadScene = async () => {
-    await setCameraDolly(-15);
-    setCameraSmoothTime(1.4);
-    setTimeout(() => {
-      setSceneLoaded(true);
-    }, 2000);
-    await fitCamera();
-  };
-
-  const fitCamera = async () => {
-    if (currentPage === PAGES.HOME) {
-      fixSceneToView(fitScreenCamera.current);
-    }
-  };
+  // useEffect(() => {
+  //   loadScene();
+  // }, []);
+  //
+  // const loadScene = async () => {
+  //   await setCameraDolly(-15);
+  //   setCameraSmoothTime(1.4);
+  //   setTimeout(() => {
+  //     setSceneLoaded(true);
+  //   }, 2000);
+  //   await fitCamera();
+  // };
+  //
+  // const fitCamera = async () => {
+  //   if (currentPage === PAGES.HOME) {
+  //     fixSceneToView(fitScreenCamera.current);
+  //   }
+  // };
 
   return (
     <>
