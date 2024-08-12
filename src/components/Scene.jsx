@@ -36,7 +36,7 @@ const Scene = () => {
   const resetCameraToInitialPosition = async (enableTransition) => await controls.current?.reset(enableTransition);
   const setCameraTruck = async (x, y, enableTransition) => await controls.current?.truck(x, y, enableTransition);
   const setCameraRestThreshold = (time) => (controls.current.restThreshold = time);
-  const fixSceneToView = (camera) => controls.current.fitToBox(camera, true, { paddingTop: 0 });
+  const fitSceneToView = (camera) => controls.current.fitToBox(camera, true, { paddingTop: 0 });
 
   useEffect(() => {
     const updateCameraPosition = async () => {
@@ -106,7 +106,7 @@ const Scene = () => {
 
   const fitCamera = async () => {
     if (currentPage === PAGES.HOME) {
-      fixSceneToView(fitScreenCamera.current);
+      fitSceneToView(fitScreenCamera.current);
     }
   };
 
