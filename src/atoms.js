@@ -8,6 +8,6 @@ export const PAGES = Object.freeze({
 });
 
 export const currentPageAtom = atom(PAGES.HOME);
-export const isSceneLoaded = atom(false);
+export const isSceneLoadedAtom = atom(false);
 
 export const globalStoreAtom = createStore();

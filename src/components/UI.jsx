@@ -1,5 +1,5 @@
 import { useAtom } from 'jotai';
-import { currentPageAtom, isSceneLoaded, PAGES } from '../atoms.js';
+import { currentPageAtom, isSceneLoadedAtom, PAGES } from '../atoms.js';
 import Button from './Button.jsx';
 import SocialMedia from './SocialMedia.jsx';
 import Conference from './Conference.jsx';
@@ -9,7 +9,7 @@ import Gears from './Gears.jsx';
 
 export const UI = () => {
   const [currentPage, _] = useAtom(currentPageAtom);
-  const [sceneLoaded, __] = useAtom(isSceneLoaded);
+  const [sceneLoaded, __] = useAtom(isSceneLoadedAtom);
 
   const shouldShowButtons =
     currentPage === PAGES.HOME ||
