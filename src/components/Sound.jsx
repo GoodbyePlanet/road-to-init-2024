@@ -10,7 +10,7 @@ const Sound = ({ currentPage }) => {
       {shouldPlayLittleWhoosh && (
         <PositionalAudio autoplay loop={false} url="/sounds/little-whoosh-2-6301.mp3" distance={2} />
       )}
-      {shouldPlayFastWhoosh && <PositionalAudio autoplay loop={false} url="/sounds/less_fast.mp3" distance={1} />}
+      {/*{shouldPlayFastWhoosh && <PositionalAudio autoplay loop={false} url="/sounds/less_fast.mp3" distance={1} />}*/}
     </>
   );
 };
