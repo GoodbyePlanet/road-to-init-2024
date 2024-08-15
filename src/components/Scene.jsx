@@ -27,7 +27,7 @@ const Scene = () => {
   const controls = useRef();
   const fitScreenCamera = useRef();
   const [currentPage, _] = useAtom(currentPageAtom);
-  const [isSceneLoaded, setSceneLoaded] = useAtom(isSceneLoadedAtom);
+  const [__, setSceneLoaded] = useAtom(isSceneLoadedAtom);
 
   const setCameraSmoothTime = (time) => (controls.current.smoothTime = time);
   const setCameraDolly = async (distance, enableTransition) =>
