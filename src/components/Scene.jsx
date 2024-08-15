@@ -114,7 +114,6 @@ const Scene = () => {
   return (
     <>
       <CameraControls makeDefault ref={controls} maxPolarAngle={1.6} minDistance={5} maxDistance={20} />
-      {isSceneLoaded && <Sound currentPage={currentPage} />}
       {/*Mesh bellow is here to allow resize responsiveness*/}
       <mesh ref={fitScreenCamera} position-z={0.9} visible={false}>
         <boxGeometry args={[9, 2, 2]} />
@@ -176,6 +175,7 @@ const Scene = () => {
           </Text>
         </group>
         <Suspense fallback={null}>
+          <Sound currentPage={currentPage} />
           <group rotation-y={0} position={[0, -0.8, 0]}>
             <Horse scale={0.015} />
           </group>
