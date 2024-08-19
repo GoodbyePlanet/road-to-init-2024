@@ -1,10 +1,4 @@
-### Next steps
+### Adding sound
 
-## Improvements
-
-- Fixing issue with ground
-- Support for mobile view
-- Performance improvements
-- Adding sound
-
-## Questions:
+- Explain Sound.jsx component
+- https://pixabay.com/sound-effects/

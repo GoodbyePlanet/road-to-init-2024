@@ -6,9 +6,10 @@ import Horse from './Model.jsx';
 import Ground from './Ground.jsx';
 import ProgressBar from './ProgressBar.jsx';
 import { BLUE_BLOOM_COLOR, REDDISH_BLOOM_COLOR, WHITE_BLOOM_COLOR, YELLOW_BLOOM_COLOR } from '../colors.js';
-import { currentPageAtom, isSceneLoaded, PAGES } from '../atoms.js';
+import { currentPageAtom, isSceneLoadedAtom, PAGES } from '../atoms.js';
 import { gsap } from 'gsap';
 import dawn from '../assets/dawn.exr.js';
+import Sound from './Sound.jsx';
 
 const whiteBloomColor = new Color(WHITE_BLOOM_COLOR);
 whiteBloomColor.multiplyScalar(5);
@@ -26,7 +27,7 @@ const Scene = () => {
   const controls = useRef();
   const fitScreenCamera = useRef();
   const [currentPage, _] = useAtom(currentPageAtom);
-  const [__, setSceneLoaded] = useAtom(isSceneLoaded);
+  const [__, setSceneLoaded] = useAtom(isSceneLoadedAtom);
 
   const setCameraSmoothTime = (time) => (controls.current.smoothTime = time);
   const setCameraDolly = async (distance, enableTransition) =>
@@ -36,53 +37,53 @@ const Scene = () => {
   const setCameraRestThreshold = (time) => (controls.current.restThreshold = time);
   const fitSceneToView = (camera) => controls.current.fitToBox(camera, true, { paddingTop: 0 });
 
-  // useEffect(() => {
-  //   const updateCameraPosition = async () => {
-  //     switch (currentPage) {
-  //       case PAGES.CONFERENCE:
-  //         setCameraSmoothTime(0.095);
-  //         setCameraDolly(-3, true);
-  //         setCameraSmoothTime(0.2);
-  //         gsap
-  //         .to(controls.current, {
-  //           polarAngle: controls.current.polarAngle + -0.4,
-  //           azimuthAngle: 135 * DEG2RAD,
-  //           duration: 2,
-  //           ease: 'expo.inOut',
-  //         })
-  //         .play(0);
-  //         break;
-  //       case PAGES.CONTACT:
-  //         setCameraSmoothTime(0.095);
-  //         setCameraDolly(-3, true);
-  //         setCameraSmoothTime(0.2);
-  //         gsap
-  //         .to(controls.current, {
-  //           polarAngle: controls.current.polarAngle + -0.4,
-  //           azimuthAngle: -135 * DEG2RAD,
-  //           duration: 2,
-  //           ease: 'expo.inOut',
-  //           paused: true,
-  //         })
-  //         .play(0);
-  //         break;
-  //       case PAGES.SPEAKERS:
-  //         setCameraRestThreshold(0.5);
-  //         setCameraSmoothTime(0.095);
-  //         await setCameraDolly(-10, true);
-  //         setCameraSmoothTime(0.5);
-  //         await setCameraTruck(0, -4, true);
-  //         break;
-  //       case PAGES.HOME:
-  //         await resetCameraToInitialPosition(true);
-  //         break;
-  //       default:
-  //         return;
-  //     }
-  //   };
-  //
-  //   updateCameraPosition();
-  // }, [currentPage]);
+  useEffect(() => {
+    const updateCameraPosition = async () => {
+      switch (currentPage) {
+        case PAGES.CONFERENCE:
+          setCameraSmoothTime(0.095);
+          setCameraDolly(-3, true);
+          setCameraSmoothTime(0.2);
+          gsap
+          .to(controls.current, {
+            polarAngle: controls.current.polarAngle + -0.4,
+            azimuthAngle: 135 * DEG2RAD,
+            duration: 2,
+            ease: 'expo.inOut',
+          })
+          .play(0);
+          break;
+        case PAGES.CONTACT:
+          setCameraSmoothTime(0.095);
+          setCameraDolly(-3, true);
+          setCameraSmoothTime(0.2);
+          gsap
+          .to(controls.current, {
+            polarAngle: controls.current.polarAngle + -0.4,
+            azimuthAngle: -135 * DEG2RAD,
+            duration: 2,
+            ease: 'expo.inOut',
+            paused: true,
+          })
+          .play(0);
+          break;
+        case PAGES.SPEAKERS:
+          setCameraRestThreshold(0.5);
+          setCameraSmoothTime(0.095);
+          await setCameraDolly(-10, true);
+          setCameraSmoothTime(0.5);
+          await setCameraTruck(0, -4, true);
+          break;
+        case PAGES.HOME:
+          await resetCameraToInitialPosition(true);
+          break;
+        default:
+          return;
+      }
+    };
+
+    updateCameraPosition();
+  }, [currentPage]);
 
   useEffect(() => {
     loadingExperience();
@@ -111,6 +112,7 @@ const Scene = () => {
   return (
     <>
       <CameraControls makeDefault ref={controls} maxPolarAngle={1.6} minDistance={5} maxDistance={20} />
+      {/*<Sound currentPage={currentPage} />*/}
       {/*Mesh bellow is here to allow resize responsiveness*/}
       <mesh ref={fitScreenCamera} position-z={0.9} visible={false}>
         <boxGeometry args={[9, 2, 2]} />
