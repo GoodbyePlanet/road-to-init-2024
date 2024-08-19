@@ -6,14 +6,8 @@ const Button = ({ page }) => {
   const store = useStore();
 
   const setCurrentPage = () => {
-    let isBackAtHome = false;
-
-    if (page === PAGES.HOME) {
-      isBackAtHome = true;
-    }
-
     store.set(currentPageAtom, page);
-    store.set(isAtHome, isBackAtHome);
+    store.set(isAtHome, page === PAGES.HOME);
   };
 
   return (
