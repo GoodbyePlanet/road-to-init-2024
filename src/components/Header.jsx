@@ -1,8 +1,8 @@
-import { isSceneLoaded } from '../atoms.js';
+import { isSceneLoadedAtom } from '../atoms.js';
 import { useAtom } from 'jotai';
 
 const Header = () => {
-  const [sceneLoaded, _] = useAtom(isSceneLoaded);
+  const [sceneLoaded, _] = useAtom(isSceneLoadedAtom);
 
   if (sceneLoaded) {
     return (

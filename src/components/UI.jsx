@@ -1,15 +1,17 @@
 import { useAtom } from 'jotai';
-import { currentPageAtom, isSceneLoaded, PAGES } from '../atoms.js';
+import { currentPageAtom, isSceneLoadedAtom, isSoundEnabled, PAGES } from '../atoms.js';
 import Button from './Button.jsx';
 import SocialMedia from './SocialMedia.jsx';
 import Conference from './Conference.jsx';
 import Contact from './Contact.jsx';
 import Speakers from './Speakers.jsx';
 import Gears from './Gears.jsx';
+import SoundIcon from './SoundIcon.jsx';
 
 export const UI = () => {
   const [currentPage, _] = useAtom(currentPageAtom);
-  const [sceneLoaded, __] = useAtom(isSceneLoaded);
+  const [sceneLoaded, __] = useAtom(isSceneLoadedAtom);
+  const [soundEnabled, setIsSoundEnabled] = useAtom(isSoundEnabled);
 
   const shouldShowButtons =
     currentPage === PAGES.HOME ||
@@ -18,6 +20,8 @@ export const UI = () => {
     currentPage === PAGES.SPEAKERS;
   const isOnPage = (page) => currentPage === page;
   const shouldShowHomeButton = isOnPage(PAGES.CONFERENCE) || isOnPage(PAGES.CONTACT) || isOnPage(PAGES.SPEAKERS);
+
+  const handleSoundEnable = () => setIsSoundEnabled(!soundEnabled);
 
   return (
     <div className="pointer-events-none fixed inset-0">
@@ -39,6 +43,9 @@ export const UI = () => {
             </div>
             <div className="pointer-events-auto fixed bottom-7 left-9 w-12 cursor-pointer hover:accent-yellow-400">
               <Gears />
+            </div>
+            <div className="pointer-events-auto fixed bottom-7 left-24 w-12 cursor-pointer hover:accent-yellow-400">
+              <SoundIcon onSoundIconClick={handleSoundEnable} />
             </div>
           </div>
         )}
