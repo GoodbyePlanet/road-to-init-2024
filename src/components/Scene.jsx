@@ -9,10 +9,9 @@ export const Scene = () => {
       <mesh>
         <boxGeometry />
         <meshNormalMaterial />
-        <Ground />
+        {/*<Ground />*/}
       </mesh>
-      <Environment files={dawn} />
-      {/*<Environment preset="forest" />*/}
+      {/*<Environment files={dawn} />*/}
     </>
   );
 };
