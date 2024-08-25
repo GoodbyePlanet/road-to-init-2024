@@ -23,28 +23,28 @@ const Ground = () => {
   return (
     <Suspense fallback={null}>
       <mesh position-y={-0.8} rotation-x={-Math.PI / 2}>
-        <planeGeometry args={[100, 100, 100, 100]} />
-        <meshBasicMaterial wireframe color="grey" />
-        {/*<MeshReflectorMaterial*/}
-        {/*  // reflectorOffset={-5}*/}
-        {/*  roughnessMap={roughness}*/}
-        {/*  roughness={1.2}*/}
-        {/*  resolution={800}*/}
-        {/*  blur={[100, 100]}*/}
-        {/*  mixBlur={1}*/}
-        {/*  depthScale={1}*/}
-        {/*  opacity={0.5}*/}
-        {/*  transparent*/}
-        {/*  minDepthThreshold={0.4}*/}
-        {/*  maxDepthThreshold={1.4}*/}
-        {/*  color="#333"*/}
-        {/*  metalness={0.5}*/}
-        {/*  // mixStrength={2.5} // Strength of the reflections*/}
-        {/*  // mixContrast={1} // Contrast of the reflections*/}
-        {/*  mixStrength={5.5} // Strength of the reflections*/}
-        {/*  mixContrast={3} // Contrast of the reflections*/}
-        {/*  dithering*/}
-        {/*/>*/}
+        <planeGeometry args={[100, 100]} />
+        {/*<meshBasicMaterial wireframe color="grey" />*/}
+        <MeshReflectorMaterial
+          // reflectorOffset={-5}
+          roughnessMap={roughness}
+          roughness={1.2}
+          resolution={800}
+          blur={[100, 100]}
+          mixBlur={1}
+          depthScale={1}
+          opacity={0.5}
+          transparent
+          minDepthThreshold={0.4}
+          maxDepthThreshold={1.4}
+          color="#333"
+          metalness={0.5}
+          mixStrength={2.5} // Strength of the reflections
+          mixContrast={1} // Contrast of the reflections
+          // mixStrength={5.5} // Strength of the reflections
+          // mixContrast={3} // Contrast of the reflections
+          dithering
+        />
       </mesh>
     </Suspense>
   );
