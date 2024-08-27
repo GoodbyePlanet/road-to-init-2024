@@ -140,5 +140,4 @@ const Scene = () => {
 
 useFont.preload(FONT);
 
-// export default Scene;
 export default memo(Scene);
