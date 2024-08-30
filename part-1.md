@@ -17,6 +17,9 @@
 - Explain App.jsx
   - <Canvas shadows /> container for 3D scene, shadows enables shadow mapping to 3D scene
   - FOV: the part of the scene that is visible on display at any given moment.
+    FOV is typically applied to perspective cameras, which mimic the way human eyes perceive depth and distance.
+    fov: 45 means angular width of the scene that is covered through the lens of the camera
+  - https://www.techtarget.com/whatis/definition/field-of-view-FOV
   - Perspective camera - what we see in the games, camera in our phone, objects closed to the camera are larger, they take more space
     than the object that are far from the camera
   - OrbitControls is a component that adds mouse controls to the scene, allowing you to rotate, pan, and zoom the camera by dragging the mouse.
