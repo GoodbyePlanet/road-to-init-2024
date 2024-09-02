@@ -24,7 +24,7 @@ const Ground = () => {
     <Suspense fallback={null}>
       <mesh position-y={-0.8} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[100, 100]} />
-        {/*<meshBasicMaterial color="blue" />*/}
+        {/*<meshBasicMaterial wireframe color="grey" />*/}
         <MeshReflectorMaterial
           // reflectorOffset={-5}
           roughnessMap={roughness}
@@ -41,6 +41,8 @@ const Ground = () => {
           metalness={0.5}
           mixStrength={2.5} // Strength of the reflections
           mixContrast={1} // Contrast of the reflections
+          // mixStrength={5.5} // Strength of the reflections
+          // mixContrast={3} // Contrast of the reflections
           dithering
         />
       </mesh>
