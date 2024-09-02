@@ -1,10 +1,9 @@
-### Next steps
+### Sound
 
-## Improvements
+- Explain Sound.jsx
 
-- Fixing issue with ground
-- Support for mobile view
-- Performance improvements
-- Adding sound
-
-## Questions
+- To change
+ 
+  - Button.jsx
+  - Scene.js
+  - UI.jsx
