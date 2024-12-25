@@ -13,3 +13,11 @@ https://docs.google.com/presentation/d/1j5cu1WPvvFVd-DsTQVkPpzAzcBI3hokB7bIkQKRW
 yarn
 yarn dev
 ```
+
+### Debugging
+
+#### For debugging alignment of the 3D objects
+```js
+<gridHelper args={[10, 10]} />
+<axesHelper args={[5]} />
+```
