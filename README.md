@@ -17,6 +17,8 @@ yarn dev
 ### Debugging
 
 #### For debugging alignment of the 3D objects
+Adds a grid to your 3D scene, commonly used as a reference for alignment or understanding spatial layout.
+Displays the 3D scene's coordinate axes (X, Y, Z).
 ```js
 <gridHelper args={[10, 10]} />
 <axesHelper args={[5]} />
