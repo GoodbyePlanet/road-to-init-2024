@@ -1,5 +1,5 @@
 import { memo, Suspense, useEffect, useRef } from 'react';
-import { CameraControls, Environment, Text, useFont } from '@react-three/drei';
+import { CameraControls, Environment, Stars, Text, useFont } from '@react-three/drei';
 import { useAtom } from 'jotai';
 import { Color, MathUtils } from 'three';
 import Horse from './Model.jsx';
@@ -192,6 +192,9 @@ const Scene = () => {
           <meshBasicMaterial color={whiteBloomColor} toneMapped={false} />
         </Text>
         <Ground />
+        <group position-y={0.8}>
+          <Stars radius={100} depth={20} count={3000} factor={3} saturation={0} fade speed={1} />
+        </group>
       </Suspense>
       <Environment files={dawn} />
     </>
