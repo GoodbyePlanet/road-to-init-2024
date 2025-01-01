@@ -188,7 +188,7 @@ const Scene = () => {
           letterSpacing={-0.05}
           textAlign="center"
         >
-          2024
+          2025
           <meshBasicMaterial color={whiteBloomColor} toneMapped={false} />
         </Text>
         <Ground />
