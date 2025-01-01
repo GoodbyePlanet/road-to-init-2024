@@ -15,10 +15,10 @@ const Ground = () => {
     roughness.colorSpace = 'srgb-linear';
   }, [roughness]);
 
-  // useFrame((state) => {
-  //   let time = -state.clock.getElapsedTime() * 0.158;
-  //   roughness.offset.set(0, time % 1);
-  // });
+  useFrame((state) => {
+    let time = -state.clock.getElapsedTime() * 0.158;
+    roughness.offset.set(0, time % 1);
+  });
 
   return (
     <Suspense fallback={null}>
