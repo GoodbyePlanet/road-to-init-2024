@@ -34,7 +34,7 @@ const Speakers = () => {
                     <p>{name}</p>
                   </div>
                   <figcaption className="p-4">
-                    <p className="mb-4 text-base font-bold leading-relaxed text-gray-800 dark:text-gray-300">
+                    <p className="mb-4 text-base font-bold leading-relaxed text-white dark:text-gray-300">
                       {presentationTopic}
                     </p>
                     <small className="line-clamp-4 leading-5 text-gray-500 dark:text-gray-400">
