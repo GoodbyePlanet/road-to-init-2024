@@ -6,6 +6,7 @@
     - WebGL (Web Graphics Library) is a JavaScript API that enables rendering 3D graphics directly in web browsers without
     the need for plugins. It leverages the power of the GPU to create interactive, high-performance 2D and 3D graphics within web applications.
     - Three.js is a JavaScript library that simplifies creating and rendering 3D graphics in a web browser using WebGL 
+    - It’s a JavaScript API that lets you send instructions to your computer’s GPU (graphics card) from inside the browser.
   - @react-three/fiber - https://r3f.docs.pmnd.rs/getting-started/introduction - everything that is possible in three.js it's also
     possible in react-three/fiber
   - @react-three/drei - https://github.com/pmndrs/drei - useful helpers for react-three/fiber like, camera, camera-controls, shapes, loaders, ect...
@@ -19,6 +20,7 @@
   - FOV: the part of the scene that is visible on display at any given moment.
     FOV is typically applied to perspective cameras, which mimic the way human eyes perceive depth and distance.
     fov: 45 means angular width of the scene that is covered through the lens of the camera
+  - FOV - ugao u stepenima koji odredjuje sirinu scene iz perspektive kamere
   - https://www.techtarget.com/whatis/definition/field-of-view-FOV
   - Perspective camera - what we see in the games, camera in our phone, objects closed to the camera are larger, they take more space
     than the object that are far from the camera
