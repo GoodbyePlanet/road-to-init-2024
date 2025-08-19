@@ -2,7 +2,7 @@ const Conference = () => (
   <>
     <div className="appears-content absolute left-7 top-56 w-4/12 rounded-lg bg-white/5 p-6 font-mono text-white backdrop-blur-sm backdrop-brightness-150">
       <p className="3xl:text-[32px] 3xl:mb-12 3xl:max-w-[619px] mb-8 text-lg uppercase xl:max-w-[460px] xl:text-[22px] 2xl:mb-5 2xl:max-w-[500px] 2xl:text-[28px]">
-        LETS MEET ON SEPTEMBER 2024 BANSKI DVOR / BANJA LUKA
+        LET'S MEET IN OCTOBER 2025 AT BANSKI DVOR, BANJA LUKA
       </p>
       <p className="mb-5 mt-2 uppercase">[ BUY TICKETS ]</p>
       <p className="mb-2 mt-2 uppercase">History</p>
